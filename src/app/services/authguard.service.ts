@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
         return this.auth.authState
             .take(1)
             .map(authState => !!authState)
-            .do(auth => auth /* this.checkLogin(auth) */ ? true : this.router.navigate(['/login']));
+            .do(auth => this.checkLogin(auth) ? true : this.router.navigate(['/login']));
     }
 
     checkLogin(auth: boolean){

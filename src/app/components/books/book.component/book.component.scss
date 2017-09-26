@@ -1,0 +1,52 @@
+.bookCard{
+    background-color:#FAFAFA;
+    padding: 0;
+    margin-bottom:2%;
+    margin-top: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.book-author{
+    font-style:italic;
+}
+
+.bookImageDiv{
+    padding:0;
+}
+
+.buttonDiv{
+    margin-top: 2%;
+}
+
+img{
+    width:100%;
+}
+
+.description{
+    text-align: justify;
+}
+
+@media screen and (max-width : 600px)
+{
+  h1{
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  h2{
+    margin-top:0;
+    font-size: 1.1em;
+  }
+
+  .description{
+      font-size: 1em;
+  }
+
+  .bookImage{
+    height:150px;
+    }
+
+    .buttonDiv{
+        margin-top: 5%;
+    }
+}

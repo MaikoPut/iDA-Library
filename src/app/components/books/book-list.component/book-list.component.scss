@@ -1,0 +1,183 @@
+.bookCard{
+    margin: 2% 4.166666% 0 4.166666% ;
+    background-color:#FAFAFA;
+    padding:0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.bookImageDiv{
+    padding:0;
+}
+
+.bookCardLoaned{
+    margin: 2% 4.166666% 0 4.166666%;
+    background-color: rgba(68,68,68,1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    color: #FAFAFA;
+    padding:0;
+}
+
+.bookImage{
+    width:100%;
+    height:250px;
+}
+
+.filter-choice-button{
+    margin-bottom:5px;
+}
+
+.button-div{
+    text-align: center;
+    margin : 3% 0 3% 0;
+
+    button{
+        width: 50px;
+        height: 50px;
+        margin-left:2%;
+        background-color: transparent;
+        color: black;
+    }
+}
+
+.filter-container{
+    background-color:#EEEEEE;
+
+    div{
+        padding:2%;
+    }
+}
+
+.book-author{
+    font-style: italic;
+    margin-top:0;
+}
+
+.active-filter{
+     background-color: lightgreen;
+ }
+
+.back-button{
+    border: 1px solid red;
+}
+
+.add-button {
+    border: 1px solid black;
+}
+
+.save-book-button{
+    background-color: transparent;
+    color: black;
+    border: 1px solid red;
+}
+
+.close-button{
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.filter-button{
+    border: 1px solid orange;
+    background-color: transparent;
+}
+
+.filter-button-image{
+    width:100%;
+}
+
+.inputBook{
+    margin-bottom:1%;
+}
+
+.body{
+    height:255px;
+}
+
+.buttonDiv{
+    text-align: left;
+}
+
+.book-loaned-wrapper{
+    margin-bottom:5%;
+}
+
+.tag{
+    width:25px;
+    height:25px;
+    border-radius: 5px;
+    margin-left:2%
+}
+
+.code-tag{
+    background-color: #FC4F05;
+}
+
+.design-tag{
+    background-color:  #FF9A03;
+}
+
+.marketing-tag{
+    background-color: #9F55A3;
+}
+
+.copyright-tag{
+    background-color:  #348BBA;
+}
+
+.entrep-tag{
+    background-color:  #37A31C;
+}
+
+.tag-text{
+    line-height: 25px;
+    float:left;
+    margin-left:1%;
+    font-style: italic;
+}
+
+@media screen and (max-width : 600px)
+{
+  h2{
+    font-size: 1.2em;
+  }
+
+  h3{
+    font-size: 1em;
+  }
+
+    .bookImage{
+        height:150px;
+    }
+
+    .tag{
+        width:10px;
+        height:10px;
+        margin-left:4%
+    }
+
+    .tag-text{
+        line-height: 10px;
+    }
+
+    .book-loaned-wrapper{
+        margin-bottom:2%;
+    }
+
+    .button-div{
+        
+        button{
+            width: 30%;
+            height: 30px;
+            line-height: 0;
+        }
+    }
+    .filter-button-image{
+        height:100%;
+        width:initial;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .bookCard, .bookCardLoaned{
+        margin-left: 8.7777%;
+    }
+}

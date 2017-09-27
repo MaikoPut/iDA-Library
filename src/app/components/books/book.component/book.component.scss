@@ -26,6 +26,31 @@ img{
     text-align: justify;
 }
 
+.button-all{
+    background-color: transparent;
+    border: 2px solid #999;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.borrowed-span{
+    background-color: rgba(255,0,0,0.6);
+    border-radius: 15px;
+    color: white;
+    font-size: 0.8em;
+    padding: 0 8px 0 8px;
+}
+
+.available-span{
+    background-color: rgba(0, 145, 0, 0.6);
+    border-radius: 15px;
+    color: white;
+    font-size: 0.8em;
+    padding: 0 8px 0 8px;
+}
+
 @media screen and (max-width : 600px)
 {
   h1{
@@ -33,20 +58,40 @@ img{
     font-weight: bold;
   }
 
+  .description{
+    line-height: 22px;
+  }
+
   h2{
     margin-top:0;
     font-size: 1.1em;
   }
 
+  h4{
+    font-size: 1.1em;
+  }
+
+  .borrowed-span-wrapper{
+    margin-top: 5%;
+  }
+
+  .available-span-wrapper{
+    margin-top: 5%;
+  }
+
+  .title{
+    margin-top:2%;
+  }
+
   .description{
-      font-size: 1em;
+    font-size: 1em;
   }
 
   .bookImage{
     height:150px;
-    }
+  }
 
-    .buttonDiv{
-        margin-top: 5%;
-    }
+  .buttonDiv{
+    margin-top: 5%;
+  }
 }

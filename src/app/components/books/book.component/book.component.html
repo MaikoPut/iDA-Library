@@ -3,12 +3,13 @@
         <img [src]="book.imageUrl" alt="bookimage">
     </div>
     <div class="col-xs-12 col-sm-7 buttonDiv">
-        <button class="btn btn-info" [routerLink]="['/booklist']">Go Back</button>
-        <button class="btn btn-success" *ngIf="book.loanedOut == false" (click)="setLoaned(book)">Borrow</button>
-        <button class="btn btn-warning" *ngIf="book.loanedOut == true" (click)="bringBack(book)">Bring back</button>
+        <button class="btn button-all" [routerLink]="['/booklist']">Go Back</button>
+        <button class="btn button-all" *ngIf="book.loanedOut == false" (click)="setLoaned(book)">Borrow book</button>
+        <button class="btn button-all" *ngIf="book.loanedOut == true" (click)="bringBack(book)">Return book</button>
     </div>
-    <h1 class="col-xs-12 col-sm-7">{{book.title}}</h1>
+    <h4 *ngIf="book.loanedOut == true" class="col-xs-12 col-sm-7 borrowed-span-wrapper"><span class="borrowed-span">Borrowed</span> {{book.loanedBy}}</h4>
+    <h4 *ngIf="book.loanedOut == false" class="col-xs-12 col-sm-7 available-span-wrapper"><span class="available-span">Available</span></h4>
+    <h1 class="col-xs-12 col-sm-7 title">{{book.title}}</h1>
     <h2 class="col-xs-12 col-sm-7 book-author">{{book.author}}</h2>
     <h4 class="col-xs-12 col-sm-7 description">{{book.description}}</h4>
-    <h4 *ngIf="book.loanedOut == true" class="col-xs-12 col-sm-7">Borrowed by {{book.loanedBy}}</h4>
 </div>

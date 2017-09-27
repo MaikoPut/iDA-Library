@@ -2,13 +2,13 @@
     <h3>Scan the QR-code</h3>
 </div>
 <div class="readerWrapper">
-        <qr-scanner
-            [debug]="true"           
-            [mirror]="true"       
-            [stopAfterScan]="true" 
-            [updateTime]="500"
-            [canvasHeight]="320" 
-            [canvasWidth]="320"
-            (onRead)="decodedOutput($event)">
+    <qr-scanner
+        [debug]="true"           
+        [mirror]="true"       
+        [stopAfterScan]="true" 
+        [updateTime]="500"
+        [canvasHeight]="320" 
+        [canvasWidth]="320"
+        (onRead)="decodedOutput($event)">
     </qr-scanner>
 </div>

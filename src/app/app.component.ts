@@ -2,7 +2,6 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Book } from './models/book.model';
 import { Observable } from 'rxjs';
 import { Router } from "@angular/router";
-import { AuthService } from './services/auth.service';
 import { User } from './models/user.model';
 
 import { Store } from '@ngrx/store';

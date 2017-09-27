@@ -45,7 +45,7 @@
         <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='design'}" (click)="onFilterChange('design')">Design</button>
         <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='marketing'}" (click)="onFilterChange('marketing')">Marketing</button>
         <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='copyright'}" (click)="onFilterChange('copyright')">Copyright</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='entrepeneurship'}" (click)="onFilterChange('entrep')">Entrepeneurship</button>        
+        <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='entrep'}" (click)="onFilterChange('entrep')">Entrepeneurship</button>        
       </div>
     </div>
   </div>
@@ -60,27 +60,31 @@
     </div>
 </div>
 <div *ngFor="let book of results | async | bookfilter:filter" [routerLink]="['/book', book.id]">
-<div class="col-xs-offset-1 col-xs-10 col-sm-5" [ngClass]="{'bookCard': !book.loanedOut, 'bookCardLoaned': book.loanedOut}">
+  <div class="col-xs-offset-1 col-xs-10 col-sm-5 bookCard">
     <div class="col-xs-4 col-sm-3 bookImageDiv">
         <img class="bookImage" src={{book.imageUrl}} alt="image for book">
     </div>
-    <h2 class="col-xs-8 col-sm-9">{{book.title}}</h2> 
-    <h3 class="col-xs-8 col-sm-9 book-author">{{book.author}}</h3>
-    <h3 class="col-xs-8 col-sm-9 book-loaned-wrapper"><span *ngIf="book.loanedBy">Borrowed by </span>{{book.loanedBy}}</h3>
-    <div *ngIf="book.tag == 'code'">
-      <div class="col-xs-1 col-sm-1 tag code-tag"></div><p class="tag-text">code</p>   
+    <div class="col-xs-8 col-sm-9 content-wrapper">
+      <h2 class="col-xs-12 book-title">{{book.title}}</h2> 
+      <h3 class="col-xs-12 book-author">{{book.author}}</h3>
+      <h3 class="col-xs-12 book-loaned-wrapper"><span class="book-loaned-span" *ngIf="book.loanedBy">Borrowed</span> {{book.loanedBy}}</h3>
+      <div class="tag-wrapper" *ngIf="book.tag == 'code'">
+        <div class="tag code-tag"></div>
+          <p class="tag-text"> code</p>
+        </div>
+      <div class="tag-wrapper" *ngIf="book.tag == 'design'">
+        <div class="tag design-tag"></div><p class="tag-text"> design</p>   
+      </div>
+      <div class="tag-wrapper" *ngIf="book.tag == 'marketing'">
+        <div class="tag marketing-tag"></div><p class="tag-text"> marketing</p>   
+      </div>
+      <div class="tag-wrapper" *ngIf="book.tag == 'copyright'">
+        <div class="tag copyright-tag"></div>
+          <p class="tag-text"> copyright</p>   
+        </div>
+      <div class="tag-wrapper" *ngIf="book.tag == 'entrep'">
+        <div class="tag entrep-tag"></div><p class="tag-text"> entrepeneurship</p>   
+      </div>
     </div>
-    <div *ngIf="book.tag == 'design'">
-      <div class="col-xs-1 col-sm-1 tag design-tag"></div><p class="tag-text">design</p>   
-    </div>
-    <div *ngIf="book.tag == 'marketing'">
-      <div class="col-xs-1 col-sm-1 tag marketing-tag"></div><p class="tag-text">marketing</p>   
-    </div>
-    <div *ngIf="book.tag == 'copyright'">
-      <div class="col-xs-1 col-sm-1 tag copyright-tag"></div><p class="tag-text">copyright</p>   
-    </div>
-    <div *ngIf="book.tag == 'entrep'">
-      <div class="col-xs-1 col-sm-1 tag entrep-tag"></div><p class="tag-text">entrepeneurship</p>   
-    </div>
-</div>
+  </div>
 </div>

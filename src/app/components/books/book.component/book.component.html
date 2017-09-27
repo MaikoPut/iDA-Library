@@ -1,9 +1,9 @@
+<button class="btn button-all col-xs-offset-1 col-xs-10 col-lg-offset-3 col-lg-6" [routerLink]="['/booklist']"><< Back</button>
 <div class="col-xs-offset-1 col-xs-10 col-lg-offset-3 col-lg-6 bookCard" *ngIf="book | async as book">
     <div class="col-xs-12 col-sm-5 bookImageDiv">
         <img [src]="book.imageUrl" alt="bookimage">
     </div>
     <div class="col-xs-12 col-sm-7 buttonDiv">
-        <button class="btn button-all" [routerLink]="['/booklist']">Go Back</button>
         <button class="btn button-all" *ngIf="book.loanedOut == false" (click)="setLoaned(book)">Borrow book</button>
         <button class="btn button-all" *ngIf="book.loanedOut == true" (click)="bringBack(book)">Return book</button>
     </div>

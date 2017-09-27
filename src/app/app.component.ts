@@ -20,7 +20,7 @@ import { BookService } from './services/book.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(private store: Store<fromRoot.State>, private router: Router, public authService: AuthService, private bookService: BookService){
+  constructor(private store: Store<fromRoot.State>, private router: Router){
     this.store.dispatch(new BookActions.FetchAllBooks());
   }
 

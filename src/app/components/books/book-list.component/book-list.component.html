@@ -40,12 +40,14 @@
     <div class="collapse filter-container" id="filter">
       <div class="bg-dark p-4">
         <h4 class="text-white">Filters</h4>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='all'}" (click)="onFilterChange('all')">All Books</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='code'}" (click)="onFilterChange('code')">Code</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='design'}" (click)="onFilterChange('design')">Design</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='marketing'}" (click)="onFilterChange('marketing')">Marketing</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='copyright'}" (click)="onFilterChange('copyright')">Copyright</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': filter=='entrep'}" (click)="onFilterChange('entrep')">Entrepeneurship</button>        
+        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='all'}" (click)="onBookFilterChange('all')">All Books</button>
+        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='code'}" (click)="onBookFilterChange('code')">Code</button>
+        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='design'}" (click)="onBookFilterChange('design')">Design</button>
+        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='marketing'}" (click)="onBookFilterChange('marketing')">Marketing</button>
+        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='copyright'}" (click)="onBookFilterChange('copyright')">Copyright</button>
+        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='entrep'}" (click)="onBookFilterChange('entrep')">Entrepeneurship</button>
+        <button class="btn filter-choice-button" [ngClass]="{'active-filter': avFilter == true}" (click)="onAvailableFilterChange(true)">Available Books</button>
+        <button class="btn filter-choice-button" [ngClass]="{'active-filter': avFilter== false }" (click)="onAvailableFilterChange(false)">Borrowed Books</button>
       </div>
     </div>
   </div>
@@ -59,7 +61,7 @@
         <button class="btn btn-success add-button" data-toggle="modal" data-target="#modal">+</button>
     </div>
 </div>
-<div *ngFor="let book of results | async | bookfilter:filter" [routerLink]="['/book', book.id]">
+<div *ngFor="let book of results | async | bookfilter:bookFilter | availablefilter:avFilter" [routerLink]="['/book', book.id]">
   <div class="col-xs-offset-1 col-xs-10 col-sm-5 bookCard">
     <div class="col-xs-4 col-sm-3 bookImageDiv">
         <img class="bookImage" src={{book.imageUrl}} alt="image for book">

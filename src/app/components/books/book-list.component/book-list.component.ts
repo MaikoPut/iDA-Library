@@ -17,12 +17,13 @@ export class BookListComponent{
     results: Observable<Book[]>;
     loading: Observable<boolean>;
     bookToAdd: Book = new Book("");
-    filter: string;
+    bookFilter: string;
+    avFilter: boolean;
   
     constructor(private store: Store<fromStore.State>){
         this.results = this.store.select(fromStore.getBooks);
         this.loading = this.store.select(fromStore.getLoading);
-        this.filter = "all";
+        this.bookFilter = "all";
     }
 
     ngOnInit(){
@@ -32,7 +33,14 @@ export class BookListComponent{
        this.store.dispatch(new Actions.AddBook(this.bookToAdd));
     }
 
-    onFilterChange(value){
-        this.filter = value;
+    onBookFilterChange(value){
+        this.bookFilter = value;
+        if(value=='all'){
+            this.avFilter = null;
+        }
+    }
+
+    onAvailableFilterChange(value){
+        this.avFilter = value;
     }
 }

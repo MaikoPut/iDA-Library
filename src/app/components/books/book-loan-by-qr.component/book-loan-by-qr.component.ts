@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Book } from '../../../models/book.model';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
@@ -13,12 +13,17 @@ import * as BookActions from '../../../state-management/actions/book.actions';
     styleUrls: ["./book-loan-by-qr.component.scss"]
 })
 
-export class BookLoanQRComponent{
+export class BookLoanQRComponent implements OnDestroy{
 
     constructor(private store: Store<fromStore.State>, private router: Router){
+
     }
 
     decodedOutput(event){
         this.store.dispatch(new BookActions.GetBookWQR(event));
+    }
+
+    ngOnDestroy(){
+        console.log("destroyed");
     }
 }

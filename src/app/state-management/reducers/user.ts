@@ -25,7 +25,8 @@ export function userReducer(state: State = initialState, action: UserActions.Act
         case UserActions.LOGIN: {
             return{
                 ...state,
-                loading: true
+                loading: true,
+                error: ''
             };
         }
         case UserActions.LOGIN_DONE: {

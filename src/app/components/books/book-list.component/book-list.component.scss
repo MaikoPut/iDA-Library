@@ -62,13 +62,27 @@
   background-color: #EEEEEE;
   padding-left: 4%;
 
-  div {
+  .filter-container-inner {
     padding: 2%;
+  }
+}
+
+.filter-header{
+  padding: 0;
+
+  h4{
+    padding:0;
+  }
+
+  p{
+    margin-top:10px;
+    text-decoration:underline;
   }
 }
 
 .book-title {
   margin-top: 5%;
+  font-weight: 800;
 }
 
 .book-author {
@@ -77,7 +91,8 @@
 }
 
 .active-filter {
-  background-color: lightgreen;
+  background-color: red;
+  color: white;
 }
 
 .back-button {

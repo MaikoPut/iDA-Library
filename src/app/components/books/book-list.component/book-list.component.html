@@ -38,14 +38,19 @@
 
   <div class="pos-f-t">
     <div class="collapse filter-container" id="filter">
-      <div class="bg-dark p-4">
-        <h4 class="text-white">Filters</h4>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='all'}" (click)="onBookFilterChange('all')">All Books</button>
+      <div class="bg-dark p-4 filter-container-inner">
+        <div class="col-xs-12 filter-header">
+          <h4 class="col-xs-6">Filters</h4>
+          <p class="col-xs-offset-4 col-xs-1" (click)="onBookFilterChange('all')">reset</p>
+        </div>
+        <!--<button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='all'}" (click)="onBookFilterChange('all')">Reset</button>-->
+        <h5>tags</h5>
         <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='code'}" (click)="onBookFilterChange('code')">Code</button>
         <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='design'}" (click)="onBookFilterChange('design')">Design</button>
         <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='marketing'}" (click)="onBookFilterChange('marketing')">Marketing</button>
         <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='copyright'}" (click)="onBookFilterChange('copyright')">Copyright</button>
         <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='entrep'}" (click)="onBookFilterChange('entrep')">Entrepeneurship</button>
+        <h5>availability</h5>
         <button class="btn filter-choice-button" [ngClass]="{'active-filter': avFilter == true}" (click)="onAvailableFilterChange(true)">Available Books</button>
         <button class="btn filter-choice-button" [ngClass]="{'active-filter': avFilter == false }" (click)="onAvailableFilterChange(false)">Borrowed Books</button>
       </div>

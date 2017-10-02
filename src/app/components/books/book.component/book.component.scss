@@ -26,13 +26,10 @@ img {
   margin-top: 0;
 }
 
-.description {
-  text-align: justify;
-}
-
 .button-all {
   background-color: transparent;
   border: 2px solid #999;
+  float:right;
 
   &:focus {
     outline: none;

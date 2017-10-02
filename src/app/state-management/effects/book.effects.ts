@@ -13,13 +13,13 @@ export class BookEffects {
 
     constructor(private actions$: Actions,
                 private bookService: BookService,
-                private router: Router){}
+                private router: Router) {}
 
     @Effect()
     getAllBooks$: Observable<Action> = this.actions$.ofType(BookActions.FETCH_ALL_BOOKS)
-                .switchMap(() =>{
+                .switchMap(() => {
                     return this.bookService.getAllBooks()
-                    .map(results => new BookActions.FetchAllBooksDone(results))
+                    .map(results => new BookActions.FetchAllBooksDone(results));
     });
 
     @Effect()
@@ -60,13 +60,13 @@ export class BookEffects {
                 .switchMap(book => {
                     return this.bookService.addBook(book)
                     .map(result => new BookActions.AddBookDone(book));
-                }); 
-    
+                });
     @Effect()
     getBookWQR$: Observable<Action> = this.actions$.ofType(BookActions.GET_BOOK_W_QR)
                 .map(toPayload)
                 .switchMap(qr => {
                     return this.bookService.getBookByQR(qr)
-                    .map(result => {this.router.navigate(["book/"+result[0].id]);return new BookActions.GetBookWQRDone(result[0])});
-                })
+                    .map(result => {this.router.navigate(['app-book-component/' + result[0].id]);
+                    return new BookActions.GetBookWQRDone(result[0]); });
+                });
  }

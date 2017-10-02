@@ -1,6 +1,6 @@
 import { User } from './user.model';
 
-export interface IBook{
+export interface IBook {
     id: string;
     title: string;
     author: string;
@@ -12,7 +12,7 @@ export interface IBook{
     tag: string;
 }
 
-export class Book implements IBook{
+export class Book implements IBook {
     id: string;
     title: string;
     author: string;
@@ -23,7 +23,7 @@ export class Book implements IBook{
     qrcode: string;
     tag: string;
 
-    constructor(obj?: any){
+    constructor(obj?: any) {
         this.id = obj.id || '';
         this.title = obj.title || '';
         this.author = obj.author || '';

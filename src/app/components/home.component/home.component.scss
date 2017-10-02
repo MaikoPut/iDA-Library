@@ -1,27 +1,27 @@
-.centered{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
 }
 
-.buttonContainer{
-    margin-top:5%;
+.buttonContainer {
+  margin-top: 5%;
 }
 
-.buttonWrapper{
-    text-align: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    background-color: #FAFAFA;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.buttonWrapper {
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: #FAFAFA;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
-    &:focus{
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-    img{
-        width: 50%;
-    }
+  img {
+    width: 50%;
+  }
 }

@@ -1,21 +1,21 @@
 {
-    "name": "iDA Library",
-    "short_name": "iDA Lib",
-    "icons": [
-      {
-        "src": "assets/icons/book.ico",
-        "sizes": "256x256",
-        "type": "image\/ico"
-      },
-      {
-        "src": "assets/icons/bookiconbig.png",
-        "sizes": "512x512",
-        "type": "image\/png"
-      }
-    ],
-    "theme_color": "#D20000",
-    "background_color": "#ffffff",
-    "display": "standalone",
-    "orientation": "portrait",
-    "start_url": "./?utm_source=web_app_manifest"
-  }
+  "name": "iDA Library",
+  "short_name": "iDA Lib",
+  "icons": [
+    {
+      "src": "assets/icons/book.ico",
+      "sizes": "256x256",
+      "type": "image\/ico"
+    },
+    {
+      "src": "assets/icons/bookiconbig.png",
+      "sizes": "512x512",
+      "type": "image\/png"
+    }
+  ],
+  "theme_color": "#D20000",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "./?utm_source=web_app_manifest"
+}

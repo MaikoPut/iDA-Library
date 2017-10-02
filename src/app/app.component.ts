@@ -1,15 +1,10 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { Book } from './models/book.model';
-import { Observable } from 'rxjs';
-import { Router } from "@angular/router";
-import { User } from './models/user.model';
+import {Component, ChangeDetectionStrategy, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
-import { Store } from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import * as fromRoot from './state-management/reducers/store';
 import * as BookActions from './state-management/actions/book.actions';
 import * as UserActions from './state-management/actions/user.actions';
-
-import { BookService } from './services/book.service';
 
 @Component({
   selector: 'app-root',
@@ -17,17 +12,17 @@ import { BookService } from './services/book.service';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
-  constructor(private store: Store<fromRoot.State>, private router: Router){
+  constructor(private store: Store<fromRoot.State>, private router: Router) {
     this.store.dispatch(new BookActions.FetchAllBooks());
   }
 
-  ngOnInit(){
-    
+  ngOnInit() {
+
   }
 
-  logout(){
+  logout() {
     this.store.dispatch(new UserActions.Logout());
   }
 }

@@ -1,236 +1,235 @@
-.bookCard{
-    margin: 1% 4.166666% 4% 4.166666% ;
-    background-color:#FAFAFA;
-    padding:0;
-    box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+.bookCard {
+  margin: 1% 4.166666% 4% 4.166666%;
+  background-color: #FAFAFA;
+  padding: 0;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.bookImageDiv{
-    padding:0;
+.bookImageDiv {
+  padding: 0;
 }
 
-.bookImage{
-    width:100%;
-    height:250px;
+.bookImage {
+  width: 100%;
+  height: 250px;
 }
 
-.filter-choice-button{
-    margin-bottom:5px;
+.filter-choice-button {
+  margin-bottom: 5px;
 
-    &:focus{
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
-.content-wrapper{
-    padding-left:0;
-    height:250px;
+.content-wrapper {
+  padding-left: 0;
+  height: 250px;
 }
 
-.button-div{
-    text-align: center;
-    margin : 3% 0 3% 0;
-    padding-left:0;
+.button-div {
+  text-align: center;
+  margin: 3% 0 3% 0;
+  padding-left: 0;
 
-    button{
-        width: 50px;
-        height: 50px;
-        margin-left:2%;
-        background-color: transparent;
-        color: black;
-        border: 2px solid #999;
-    
-        &:focus{
-            outline:none;
-        }
-    }
-
-    button:first-child{
-        margin-left:1%;
-    }
-}
-
-.book-loaned-span{
-    background-color: rgba(255,0,0,0.6);
-    border-radius: 15px;
-    color: white;
-    font-size: 0.8em;
-    padding: 0 8px 0 8px;
-}
-
-.filter-container{
-    background-color:#EEEEEE;
-    padding-left:4%;
-
-    div{
-        padding:2%;
-    }
-}
-
-.book-title{
-    margin-top:5%;
-}
-
-.book-author{
-    font-style: italic;
-    margin-top:0;
-}
-
-.active-filter{
-    background-color: lightgreen;
- }
-
-.back-button{
-    border: 1px solid red;
-    margin-left:0;
-}
-
-.add-button {
-    border: 1px solid black;
-}
-
-.save-book-button{
+  button {
+    width: 50px;
+    height: 50px;
+    margin-left: 2%;
     background-color: transparent;
     color: black;
     border: 2px solid #999;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button:first-child {
+    margin-left: 1%;
+  }
 }
 
-.close-button{
-    border: 2px solid red;
-    background-color: transparent;
+.book-loaned-span {
+  background-color: rgba(255, 0, 0, 0.6);
+  border-radius: 15px;
+  color: white;
+  font-size: 0.8em;
+  padding: 0 8px 0 8px;
 }
 
-.filter-button{
-    border: 1px solid orange;
-    background-color: transparent;
+.filter-container {
+  background-color: #EEEEEE;
+  padding-left: 4%;
+
+  div {
+    padding: 2%;
+  }
 }
 
-.filter-button-image{
-    width:100%;
+.book-title {
+  margin-top: 5%;
 }
 
-.inputBook{
-    margin-bottom:1%;
+.book-author {
+  font-style: italic;
+  margin-top: 0;
 }
 
-.body{
-    height:255px;
+.active-filter {
+  background-color: lightgreen;
 }
 
-.buttonDiv{
-    text-align: left;
+.back-button {
+  border: 1px solid red;
+  margin-left: 0;
 }
 
-.book-loaned-wrapper{
-    margin-bottom:5%;
+.add-button {
+  border: 1px solid black;
 }
 
-.tag-wrapper{
-    position:absolute;
-    bottom:10px;
-    width:100%;
+.save-book-button {
+  background-color: transparent;
+  color: black;
+  border: 2px solid #999;
+}
+
+.close-button {
+  border: 2px solid red;
+  background-color: transparent;
+}
+
+.filter-button {
+  border: 1px solid orange;
+  background-color: transparent;
+}
+
+.filter-button-image {
+  width: 100%;
+}
+
+.inputBook {
+  margin-bottom: 1%;
+}
+
+.body {
+  height: 255px;
+}
+
+.buttonDiv {
+  text-align: left;
+}
+
+.book-loaned-wrapper {
+  margin-bottom: 5%;
+}
+
+.tag-wrapper {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
 
 }
 
-.tag{
-    width:10px;
-    height:10px;
-    border-radius: 50px;
-    margin-left:3%;
-    float:left;
+.tag {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  margin-left: 3%;
+  float: left;
 }
 
-.tag-text{
+.tag-text {
+  line-height: 10px;
+  float: left;
+  margin-left: 1%;
+  font-style: italic;
+}
+
+.code-tag {
+  background-color: #FC4F05;
+}
+
+.design-tag {
+  background-color: #FF9A03;
+}
+
+.marketing-tag {
+  background-color: #9F55A3;
+}
+
+.copyright-tag {
+  background-color: #348BBA;
+}
+
+.entrep-tag {
+  background-color: #37A31C;
+}
+
+@media screen and (max-width: 600px) {
+
+  .content-wrapper {
+    height: 150px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  .book-loaned-span {
+    font-size: 1em;
+  }
+
+  .bookImage {
+    height: 150px;
+  }
+
+  .tag-wrapper {
+    bottom: 0;
+  }
+
+  .tag {
+    width: 10px;
+    height: 10px;
+    margin-left: 7%
+  }
+
+  .tag-text {
     line-height: 10px;
-    float:left;
-    margin-left:1%;
-    font-style: italic;
+  }
+
+  .book-loaned-wrapper {
+    margin-bottom: 2%;
+    margin-top: 0;
+  }
+
+  .button-div {
+    padding-left: 15px;
+
+    button {
+      width: 30%;
+      height: 30px;
+      line-height: 0;
+    }
+
+    button:first-child {
+      margin-left: 1%;
+    }
+  }
+
+  .filter-button-image {
+    height: 100%;
+    width: initial;
+  }
 }
 
-.code-tag{
-    background-color: #FC4F05;
-}
-
-.design-tag{
-    background-color:  #FF9A03;
-}
-
-.marketing-tag{
-    background-color: #9F55A3;
-}
-
-.copyright-tag{
-    background-color:  #348BBA;
-}
-
-.entrep-tag{
-    background-color:  #37A31C;
-}
-
-@media screen and (max-width : 600px)
-{
-
-    .content-wrapper{
-        height:150px;
-    }
-
-    h2{
-        font-size: 1.2em;
-    }
-
-    h3{
-        font-size: 1em;
-    }
-
-    .book-loaned-span{
-        font-size: 1em;
-    }
-
-    .bookImage{
-        height:150px;
-    }
-
-    .tag-wrapper{
-        bottom: 0;
-    }
-
-    .tag{
-        width:10px;
-        height:10px;
-        margin-left:7%
-    }
-
-    .tag-text{
-        line-height: 10px;
-    }
-
-    .book-loaned-wrapper{
-        margin-bottom:2%;
-        margin-top:0;
-    }
-
-    .button-div{
-        padding-left:15px;
-        
-        button{
-            width: 30%;
-            height: 30px;
-            line-height: 0;
-        }
-
-        button:first-child{
-            margin-left:1%;
-        }
-    }
-    
-    .filter-button-image{
-        height:100%;
-        width:initial;
-    }
-}
-
-@media screen and (max-width: 767px){
-    .bookCard, .bookCardLoaned{
-        margin-left: 8.7777%;
-    }
+@media screen and (max-width: 767px) {
+  .bookCard, .bookCardLoaned {
+    margin-left: 8.7777%;
+  }
 }

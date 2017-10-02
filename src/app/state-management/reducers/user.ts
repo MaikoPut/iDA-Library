@@ -5,58 +5,60 @@ import * as UserActions from '../actions/user.actions';
 export interface State {
     loading: boolean;
     loggedInUser: User;
+    error: string;
 }
 
 const initialState: State = {
     loading: false,
-    loggedInUser: null
+    loggedInUser: null,
+    error: ''
 }
 
 export function userReducer(state: State = initialState, action: UserActions.Actions): State {
-    switch(action.type){
+    switch (action.type) {
+        case UserActions.ERROR: {
+            return{
+                ...state,
+                error: action.payload
+            };
+        }
         case UserActions.LOGIN: {
             return{
                 ...state,
                 loading: true
-            }
+            };
         }
-
         case UserActions.LOGIN_DONE: {
             return {
                 ...state,
                 loading: false
-            }
+            };
         }
-
         case UserActions.REGISTER: {
             return {
                 ...state,
                 loading: true
-            }
+            };
         }
-
         case UserActions.LOGOUT: {
             return {
                 ...state,
                 loading: true
-            }
+            };
         }
-
         case UserActions.LOGOUT_DONE: {
             return {
                 ...state,
                 loading: false,
                 loggedInUser: null
-            }
+            };
         }
-
         case UserActions.GET_USER: {
             return {
                 ...state,
                 loggedInUser: action.payload
-            }
+            };
         }
-
         default : {
             return state;
         }

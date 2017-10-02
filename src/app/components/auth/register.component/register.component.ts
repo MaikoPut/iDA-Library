@@ -7,24 +7,23 @@ import * as fromRoot from '../../../state-management/reducers/store';
 import * as UserActions from '../../../state-management/actions/user.actions';
 
 @Component({
-    selector: "register",
-    templateUrl: "./register.component.html",
-    styleUrls: ["./register.component.scss"]
+    selector: 'app-register-component',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.scss']
 })
 
 export class RegisterComponent {
-    userCredentials: UserCredentials = new UserCredentials("","","");
+    userCredentials: UserCredentials = new UserCredentials('', '', '');
     emailError: boolean;
 
-    constructor(private router: Router, private store: Store<fromRoot.State>){}
+    constructor(private router: Router, private store: Store<fromRoot.State>) {}
 
-    register(){
-        if(this.userCredentials.email.split("@")[1] != "ida-mediafoundry.be"){
+    register() {
+        if (this.userCredentials.email.split('@')[1] !== 'ida-mediafoundry.be') {
             this.emailError = true;
-        }
-        else{
+        } else {
             this.emailError = false;
             this.store.dispatch(new UserActions.Register(this.userCredentials));
-        } 
+        }
     }
 }

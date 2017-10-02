@@ -19,7 +19,6 @@ export class UserEffects {
                 return this.authService.login(userCred)
                 .then(res => new UserActions.LoginDone(res.uid));
             });
-    
     @Effect()
     loginDone$: Observable<Action> = this.actions$.ofType(UserActions.LOGIN_DONE)
             .map(toPayload)
@@ -27,13 +26,12 @@ export class UserEffects {
                 return this.userService.getUserById(userId)
                 .map(user => new UserActions.GetUser(user));
             });
-
     @Effect()
     register$: Observable<Action> = this.actions$.ofType(UserActions.REGISTER)
             .map(toPayload)
             .switchMap(userCred => {
                 return this.authService.register(userCred)
-                .then(userCred => {return new UserActions.Login(userCred)});
+                .then(userCred => new UserActions.Login(userCred));
             });
 
     @Effect()

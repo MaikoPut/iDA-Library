@@ -6,13 +6,13 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class UserService {
 
-    constructor(private db: AngularFireDatabase){}
+    constructor(private db: AngularFireDatabase) {}
 
     createUser(user: User) {
-        return this.db.list("/users").update(user.id, user);
+        return this.db.list('/users').update(user.id, user);
     }
 
-    getUserById(id: string): Observable<User>{
-        return this.db.object("/users/"+id).map(item => new User(item.id, item.name));
+    getUserById(id: string): Observable<User> {
+        return this.db.object('/users/' + id).map(item => new User(item.id, item.name));
     }
 }

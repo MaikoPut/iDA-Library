@@ -14,16 +14,36 @@ import * as UserActions from '../../../state-management/actions/user.actions';
 
 export class RegisterComponent {
     userCredentials: UserCredentials = new UserCredentials('', '', '');
+    repeatedPassword: string;
+    passwordError: boolean;
     emailError: boolean;
 
     constructor(private router: Router, private store: Store<fromRoot.State>) {}
 
     register() {
-        if (this.userCredentials.email.split('@')[1] !== 'ida-mediafoundry.be') {
+        if (this.checkEmail()) {
             this.emailError = true;
-        } else {
+        } if (this.checkPassword()) {
+            this.passwordError = true;
+      } if (!this.checkEmail() && !this.checkPassword()) {
             this.emailError = false;
             this.store.dispatch(new UserActions.Register(this.userCredentials));
         }
+    }
+    checkEmail() {
+      if (this.userCredentials.email.split('@')[1] !== 'ida-mediafoundry.be') {
+        return true;
+      } else {
+        this.emailError = false;
+        return false;
+      }
+    }
+    checkPassword() {
+      if(this.userCredentials.password !== this.repeatedPassword){
+        return true;
+      } else {
+        this.passwordError = false;
+        return false;
+      }
     }
 }

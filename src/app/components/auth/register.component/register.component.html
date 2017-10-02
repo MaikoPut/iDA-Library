@@ -3,6 +3,10 @@
   <div class="col-xs-12" *ngIf="emailError">
     <small>Your email was badly formatted (@ida-mediafoundry.be)</small>
   </div>
+
+  <div class="col-xs-12" *ngIf="passwordError">
+    <small>Your password doesn't match your repeated password</small>
+  </div>
   <div class="inputDiv">
     <input type="text" [(ngModel)]="userCredentials.name" placeholder="Full name">
   </div>
@@ -12,6 +16,9 @@
   </div>
   <div class="inputDiv">
     <input type="password" [(ngModel)]="userCredentials.password" placeholder="Password">
+  </div>
+  <div class="inputDiv">
+    <input type="password" [(ngModel)]="repeatedPassword" placeholder="Repeat password">
   </div>
   <div class="inputDiv">
     <button [disabled]="!userCredentials.name ||!userCredentials.email || !userCredentials.password"

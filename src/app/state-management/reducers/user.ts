@@ -16,7 +16,7 @@ const initialState: State = {
 
 export function userReducer(state: State = initialState, action: UserActions.Actions): State {
     switch (action.type) {
-        case UserActions.ERROR: {
+        case UserActions.USER_ERROR: {
             return{
                 ...state,
                 error: action.payload

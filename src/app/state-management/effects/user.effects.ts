@@ -15,9 +15,10 @@ export class UserEffects {
     @Effect()
     login$: Observable<Action> = this.actions$.ofType(UserActions.LOGIN)
             .map(toPayload)
-            .switchMap(userCred => {
+            .mergeMap(userCred => {
                 return this.authService.login(userCred)
-                .then(res => new UserActions.LoginDone(res.uid));
+                .then(res => {if (res === undefined) {return new UserActions.UserError('error logging in'); } else {
+                  return new UserActions.LoginDone(res.uid); }});
             });
     @Effect()
     loginDone$: Observable<Action> = this.actions$.ofType(UserActions.LOGIN_DONE)
@@ -31,7 +32,7 @@ export class UserEffects {
             .map(toPayload)
             .switchMap(userCred => {
                 return this.authService.register(userCred)
-                .then(userCred => new UserActions.Login(userCred));
+                .then(() => new UserActions.Login(userCred));
             });
 
     @Effect()
@@ -39,6 +40,6 @@ export class UserEffects {
             .map(toPayload)
             .switchMap(res => {
                 return this.authService.logout()
-                .then(res => new UserActions.LogoutDone());
+                .then(() => new UserActions.LogoutDone());
             });
 }

@@ -24,8 +24,6 @@ export class BookListComponent {
     this.results = this.store.select(fromStore.getBooks);
     this.loading = this.store.select(fromStore.getLoading);
     this.bookFilter = 'all';
-
-    this.results.subscribe(res => console.log(res));
   }
 
   addBook() {

@@ -3,7 +3,7 @@ import { Action } from '@ngrx/store';
 import { UserCredentials } from '../../models/user-credentials.model';
 import { User } from '../../models/user.model';
 
-export const ERROR = 'USER_ERROR';
+export const USER_ERROR = 'USER_ERROR';
 
 export const LOGIN = 'LOGIN';
 export const LOGIN_DONE = 'LOGIN_DONE';
@@ -15,8 +15,8 @@ export const LOGOUT_DONE = 'LOGOUT_DONE';
 
 export const GET_USER = 'GET_USER';
 
-export class Error implements Action {
-    readonly type = ERROR;
+export class UserError implements Action {
+    readonly type = USER_ERROR;
     constructor(public payload: string) {}
 }
 
@@ -50,4 +50,4 @@ export class GetUser implements Action {
     constructor(public payload: User) {}
 }
 
-export type Actions = Login | LoginDone | Register | Logout | LogoutDone | GetUser | Error;
+export type Actions = Login | LoginDone | Register | Logout | LogoutDone | GetUser | UserError;

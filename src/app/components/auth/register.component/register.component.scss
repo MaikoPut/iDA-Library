@@ -21,11 +21,19 @@ input {
 
 p {
   line-height: 0;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
   input {
-    width: 60%;
+    width: 80%;
+    height: 35px;
+    font-size:1.1em;
+  }
+
+  button{
+    width: 30%;
+    height: 30px;
   }
 
   .inputDiv {

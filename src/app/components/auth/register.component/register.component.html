@@ -8,17 +8,20 @@
     <small>Your password doesn't match your repeated password</small>
   </div>
   <div class="inputDiv">
-    <input type="text" [(ngModel)]="userCredentials.name" placeholder="Full name">
+    <label for="name">Name</label>
+    <input id="name" type="text" [(ngModel)]="userCredentials.name">
   </div>
   <div class="inputDiv">
-    <input type="text" [(ngModel)]="userCredentials.email" pattern="(?:[a-z]+(?:\.[a-z]+){1})(@ida-mediafoundry.be){1}"
-           placeholder="Email">
+      <label for="email">Email</label>
+    <input id="email" type="text" [(ngModel)]="userCredentials.email" pattern="(?:[a-z]+(?:\.[a-z]+){1})(@ida-mediafoundry.be){1}">
   </div>
   <div class="inputDiv">
-    <input type="password" [(ngModel)]="userCredentials.password" placeholder="Password">
+      <label for="password">Password</label>
+    <input id="password" type="password" [(ngModel)]="userCredentials.password">
   </div>
   <div class="inputDiv">
-    <input type="password" [(ngModel)]="repeatedPassword" placeholder="Repeat password">
+      <label for="repeatPassword">Repeat password</label>
+    <input id="repeatPassword" type="password" [(ngModel)]="repeatedPassword">
   </div>
   <div class="inputDiv">
     <button [disabled]="!userCredentials.name ||!userCredentials.email || !userCredentials.password"

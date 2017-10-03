@@ -26,13 +26,27 @@ img {
   margin-top: 0;
 }
 
-.button-all {
+.button-back {
   background-color: transparent;
   border: 2px solid #999;
-  float:right;
 
   &:focus {
     outline: none;
+  }
+}
+
+.button-loan{
+  background-color: transparent;
+  border: 2px solid #999;
+  float:right;
+  transition-duration: 0.4s;
+
+  &:focus{
+    outline:none;
+  }
+
+  @media (max-width: 764px){
+    margin-bottom: 5%;
   }
 }
 

@@ -41,7 +41,6 @@ export class BookComponent implements OnInit {
         book.loanedOut = true;
         book.loanedBy = this.loggedInUsername;
         this.store.dispatch(new BookActions.LoanBook(book));
-        this.router.navigate(['app-booklist-component']);
     }
 
     bringBack(book: Book) {
@@ -49,7 +48,6 @@ export class BookComponent implements OnInit {
             book.loanedOut = false;
             book.loanedBy = '';
             this.store.dispatch(new BookActions.BringBack(book));
-            this.router.navigate(['app-booklist-component']);
         } else {
             alert('you don\'t have this book');
         }

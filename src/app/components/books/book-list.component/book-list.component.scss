@@ -91,8 +91,12 @@
 }
 
 .active-filter {
-  background-color: red;
+  background-color: rgba(255,0,0,0.6);
   color: white;
+}
+
+.reset-button{
+  cursor: pointer;
 }
 
 .back-button {
@@ -111,7 +115,6 @@
 }
 
 .close-button {
-  border: 2px solid red;
   background-color: transparent;
 }
 
@@ -126,10 +129,11 @@
 
 .inputBook {
   margin-bottom: 1%;
+  border: solid 1px rgba(0,0,0,0.2);
 }
 
 .body {
-  height: 255px;
+  height: 400px;
 }
 
 .buttonDiv {
@@ -162,24 +166,10 @@
   font-style: italic;
 }
 
-.code-tag {
-  background-color: #FC4F05;
-}
-
-.design-tag {
-  background-color: #FF9A03;
-}
-
-.marketing-tag {
-  background-color: #9F55A3;
-}
-
-.copyright-tag {
-  background-color: #348BBA;
-}
-
-.entrep-tag {
-  background-color: #37A31C;
+.add-book-label{
+  padding-left:0;
+  margin-bottom:0;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 600px) {

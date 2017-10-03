@@ -6,10 +6,12 @@
   </div>
   </div>
   <div class="inputDiv">
-    <input type="text" [(ngModel)]="userCredentials.email" placeholder="Email">
+    <label for="email">Email</label>
+    <input id="email" type="text" [(ngModel)]="userCredentials.email">
   </div>
   <div class="inputDiv">
-    <input type="password" [(ngModel)]="userCredentials.password" placeholder="Password">
+    <label for="password">Password</label>
+    <input id="password" type="password" [(ngModel)]="userCredentials.password">
   </div>
   <div class="inputDiv">
     <button [disabled]="!userCredentials.email || !userCredentials.password" (click)="login()">Login</button>

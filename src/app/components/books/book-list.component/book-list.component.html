@@ -9,12 +9,18 @@
         </div>
         <div class="modal-body body">
           <div class="col-xs-8">
-            <input class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.title" placeholder="title">
-            <input class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.author" placeholder="author">
-            <textarea class="col-xs-12 inputBook" cols="50" rows="4" type="text" [(ngModel)]="bookToAdd.description" placeholder="description"></textarea>
-            <input class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.imageUrl" placeholder="imageUrl">
-            <input class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.qrcode" placeholder="QR-code">
-            <select class="col-xs-12" [(ngModel)]="bookToAdd.tag" name="filter">
+            <label for="booktitle" class="col-xs-12 add-book-label">Title</label>
+            <input id="booktitle" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.title">
+            <label for="bookauthor" class="col-xs-12 add-book-label">Author</label>
+            <input id="bookauthor" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.author">
+            <label for="bookdescription" class="col-xs-12 add-book-label">Description</label>
+            <textarea id="bookdescription" class="col-xs-12 inputBook" cols="50" rows="4" type="text" [(ngModel)]="bookToAdd.description"></textarea>
+            <label for="bookimg" class="col-xs-12 add-book-label">Image url</label>
+            <input id="bookimg" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.imageUrl">
+            <label for="bookqr" class="col-xs-12 add-book-label">QR code</label>
+            <input id="bookqr" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.qrcode">
+            <label for="booktag" class="col-xs-12 add-book-label">Tag</label>
+            <select id="booktag" class="col-xs-12 inputBook" [(ngModel)]="bookToAdd.tag" name="filter">
               <option value="code">Code</option>
               <option value="design">Design</option>
               <option value="copyright">Copyright</option>
@@ -41,7 +47,7 @@
       <div class="bg-dark p-4 filter-container-inner">
         <div class="col-xs-12 filter-header">
           <h4 class="col-xs-6">Filters</h4>
-          <p class="col-xs-offset-4 col-xs-1" (click)="onBookFilterChange('all')">reset</p>
+          <p class="col-xs-offset-4 col-xs-1 reset-button" (click)="onBookFilterChange('all')">reset</p>
         </div>
         <!--<button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='all'}" (click)="onBookFilterChange('all')">Reset</button>-->
         <h5>tags</h5>

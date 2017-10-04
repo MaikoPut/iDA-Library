@@ -14,8 +14,13 @@
   height: 250px;
 }
 
+.button-div-container{
+  background-color:white;
+}
+
 .filter-choice-button {
   margin-bottom: 5px;
+  background-color: #FFF;
 
   &:focus {
     outline: none;
@@ -58,24 +63,35 @@
   padding: 0 8px 0 8px;
 }
 
+.filter-identifier{
+  font-weight:600;
+}
+
+.filter-title{
+  margin-top:0;
+}
+
 .filter-container {
   background-color: #EEEEEE;
   padding-left: 4%;
 
   .filter-container-inner {
-    padding: 2%;
+    padding-top:15px;
+    padding-bottom:15px;
+    margin-bottom:3%;
   }
 }
 
 .filter-header{
   padding: 0;
+  padding-top:15px;
 
   h4{
     padding:0;
   }
 
   p{
-    margin-top:10px;
+    margin-bottom:10px;
     text-decoration:underline;
   }
 }
@@ -149,6 +165,7 @@
 
 .buttonDiv {
   text-align: left;
+  margin-top:2%;
 }
 
 .book-loaned-wrapper {
@@ -199,8 +216,14 @@
 
 .add-book-label{
   padding-left:0;
-  margin-bottom:0;
+  margin-bottom:5px;
   margin-top: 5px;
+}
+
+.add-book-image{
+  padding:0;
+  width:50%;
+  margin-left:25%;
 }
 
 .search-input{
@@ -208,6 +231,7 @@
   height:40px;
   border-radius: 15px;
   border: 1px solid #DDD;
+  padding-left:10px;
 }
 
 @media screen and (max-width: 600px) {

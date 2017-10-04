@@ -15,7 +15,7 @@
       <input class="col-sm-12" id="password" type="password" [(ngModel)]="userCredentials.password">
     </div>
     <div class="inputDiv">
-      <button [disabled]="!userCredentials.email || !userCredentials.password" (click)="login()">Login</button>
+      <button [disabled]="!userCredentials.email || !userCredentials.password" (click)="login()">Sign in</button>
     </div>
     <p [routerLink]="['/app-register-component']">Haven't gotten an account yet? Register</p>
   </div>

@@ -27,6 +27,13 @@ label{
 button{
   margin-top:2%;
   margin-bottom:2%;
+  background-color: #DDD;
+  border: 1px solid #CCC;
+  font-size:1.2em;
+
+  &:focus{
+    outline: none;
+  }
 }
 
 input {

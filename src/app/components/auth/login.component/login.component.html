@@ -1,20 +1,22 @@
 <div class="centered col-xs-12">
   <h1 class="col-xs-12">Login</h1>
   <div *ngIf="error | async as errormessage">
-  <div class="col-xs-12" *ngIf="errormessage !== ''">
-    <small>Something went wrong! Check your login credentials.</small>
+    <div class="col-xs-12" *ngIf="errormessage !== ''">
+      <small>Something went wrong! Check your login credentials.</small>
+    </div>
   </div>
+  <div class="input-container col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
+    <div class="inputDiv col-xs-12">
+      <label class="col-sm-12" for="email">Email</label>
+      <input class="col-sm-12" id="email" type="text" [(ngModel)]="userCredentials.email">
+    </div>
+    <div class="inputDiv col-xs-12">
+      <label class="col-sm-12" for="password">Password</label>
+      <input class="col-sm-12" id="password" type="password" [(ngModel)]="userCredentials.password">
+    </div>
+    <div class="inputDiv">
+      <button [disabled]="!userCredentials.email || !userCredentials.password" (click)="login()">Login</button>
+    </div>
+    <p [routerLink]="['/app-register-component']">Haven't gotten an account yet? Register</p>
   </div>
-  <div class="inputDiv">
-    <label for="email">Email</label>
-    <input id="email" type="text" [(ngModel)]="userCredentials.email">
-  </div>
-  <div class="inputDiv">
-    <label for="password">Password</label>
-    <input id="password" type="password" [(ngModel)]="userCredentials.password">
-  </div>
-  <div class="inputDiv">
-    <button [disabled]="!userCredentials.email || !userCredentials.password" (click)="login()">Login</button>
-  </div>
-  <p [routerLink]="['/app-register-component']">Haven't gotten an account yet? Register</p>
 </div>

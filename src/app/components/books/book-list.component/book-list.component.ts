@@ -19,11 +19,13 @@ export class BookListComponent {
   bookToAdd: Book = new Book('');
   bookFilter: string;
   avFilter: boolean;
+  searchString: string;
 
   constructor(private store: Store<fromStore.State>) {
     this.results = this.store.select(fromStore.getBooks);
     this.loading = this.store.select(fromStore.getLoading);
     this.bookFilter = 'all';
+    this.searchString = '';
   }
 
   addBook() {
@@ -34,10 +36,14 @@ export class BookListComponent {
     this.bookFilter = value;
     if (value === 'all') {
       this.avFilter = null;
+      this.searchString = '';
     }
   }
 
   onAvailableFilterChange(value) {
     this.avFilter = value;
+  }
+  searchByTitle(value) {
+    this.searchString = value;
   }
 }

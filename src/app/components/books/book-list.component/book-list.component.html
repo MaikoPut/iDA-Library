@@ -1,102 +1,126 @@
 <div class="modal fade" role="dialog" id="modal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title col-xs-11">Add Book</h5>
-          <button type="button" class="close col-xs-1" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title col-xs-11">Add Book</h5>
+        <button type="button" class="close col-xs-1" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body body">
+        <div class="col-xs-8">
+          <label for="booktitle" class="col-xs-12 add-book-label">Title</label>
+          <input id="booktitle" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.title">
+          <label for="bookauthor" class="col-xs-12 add-book-label">Author</label>
+          <input id="bookauthor" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.author">
+          <label for="bookdescription" class="col-xs-12 add-book-label">Description</label>
+          <textarea id="bookdescription" class="col-xs-12 inputBook" cols="50" rows="4" type="text"
+                    [(ngModel)]="bookToAdd.description"></textarea>
+          <label for="bookimg" class="col-xs-12 add-book-label">Image url</label>
+          <input id="bookimg" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.imageUrl">
+          <label for="bookqr" class="col-xs-12 add-book-label">QR code</label>
+          <input id="bookqr" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.qrcode">
+          <label for="booktag" class="col-xs-12 add-book-label">Tag</label>
+          <select id="booktag" class="col-xs-12 inputBook" [(ngModel)]="bookToAdd.tag" name="filter">
+            <option value="code">Code</option>
+            <option value="design">Design</option>
+            <option value="copyright">Copyright</option>
+            <option value="marketing">Marketing</option>
+            <option value="entrepeneurship">Entrepeneurship</option>
+          </select>
+        </div>
+        <div class="col-xs-4">
+          <img class="col-xs-12" src="{{bookToAdd.imageUrl}}" alt="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="col-xs-12 buttonDiv">
+          <button (click)="addBook()" type="button" class="btn save-book-button" data-dismiss="modal">Add book to
+            library
           </button>
-        </div>
-        <div class="modal-body body">
-          <div class="col-xs-8">
-            <label for="booktitle" class="col-xs-12 add-book-label">Title</label>
-            <input id="booktitle" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.title">
-            <label for="bookauthor" class="col-xs-12 add-book-label">Author</label>
-            <input id="bookauthor" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.author">
-            <label for="bookdescription" class="col-xs-12 add-book-label">Description</label>
-            <textarea id="bookdescription" class="col-xs-12 inputBook" cols="50" rows="4" type="text" [(ngModel)]="bookToAdd.description"></textarea>
-            <label for="bookimg" class="col-xs-12 add-book-label">Image url</label>
-            <input id="bookimg" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.imageUrl">
-            <label for="bookqr" class="col-xs-12 add-book-label">QR code</label>
-            <input id="bookqr" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.qrcode">
-            <label for="booktag" class="col-xs-12 add-book-label">Tag</label>
-            <select id="booktag" class="col-xs-12 inputBook" [(ngModel)]="bookToAdd.tag" name="filter">
-              <option value="code">Code</option>
-              <option value="design">Design</option>
-              <option value="copyright">Copyright</option>
-              <option value="marketing">Marketing</option>
-              <option value="entrepeneurship">Entrepeneurship</option>
-            </select>
-          </div>
-          <div class="col-xs-4">
-            <img class="col-xs-12" src="{{bookToAdd.imageUrl}}" alt="">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <div class="col-xs-12 buttonDiv">
-            <button (click)="addBook()" type="button" class="btn save-book-button" data-dismiss="modal">Add book to library</button>
-            <button type="button" class="btn close-button" data-dismiss="modal">Close</button>
-          </div>
+          <button type="button" class="btn close-button" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="pos-f-t">
-    <div class="collapse filter-container" id="filter">
-      <div class="bg-dark p-4 filter-container-inner">
-        <div class="col-xs-12 filter-header">
-          <h4 class="col-xs-6">Filters</h4>
-          <p class="col-xs-offset-4 col-xs-1 reset-button" (click)="onBookFilterChange('all')">reset</p>
-        </div>
-        <!--<button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='all'}" (click)="onBookFilterChange('all')">Reset</button>-->
-        <h5>tags</h5>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='code'}" (click)="onBookFilterChange('code')">Code</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='design'}" (click)="onBookFilterChange('design')">Design</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='marketing'}" (click)="onBookFilterChange('marketing')">Marketing</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='copyright'}" (click)="onBookFilterChange('copyright')">Copyright</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='entrep'}" (click)="onBookFilterChange('entrep')">Entrepeneurship</button>
-        <h5>availability</h5>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': avFilter == true}" (click)="onAvailableFilterChange(true)">Available Books</button>
-        <button class="btn filter-choice-button" [ngClass]="{'active-filter': avFilter == false }" (click)="onAvailableFilterChange(false)">Borrowed Books</button>
+<div class="pos-f-t">
+  <div class="collapse filter-container" id="filter">
+    <div class="bg-dark p-4 filter-container-inner">
+      <div class="col-xs-12 filter-header">
+        <h4 class="col-xs-6">Filters</h4>
+        <p class="col-xs-offset-4 col-xs-1 reset-button" (click)="onBookFilterChange('all')">reset</p>
       </div>
+      <h5>title</h5>
+      <input type="text" [(ngModel)]="searchString" class="search-input" (ngModelChange)="searchByTitle($event)">
+      <h5>tags</h5>
+      <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='code'}"
+              (click)="onBookFilterChange('code')">Code
+      </button>
+      <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='design'}"
+              (click)="onBookFilterChange('design')">Design
+      </button>
+      <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='marketing'}"
+              (click)="onBookFilterChange('marketing')">Marketing
+      </button>
+      <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='copyright'}"
+              (click)="onBookFilterChange('copyright')">Copyright
+      </button>
+      <button class="btn filter-choice-button" [ngClass]="{'active-filter': bookFilter=='entrep'}"
+              (click)="onBookFilterChange('entrep')">Entrepeneurship
+      </button>
+      <h5>availability</h5>
+      <button class="btn filter-choice-button" [ngClass]="{'active-filter': avFilter == true}"
+              (click)="onAvailableFilterChange(true)">Available Books
+      </button>
+      <button class="btn filter-choice-button" [ngClass]="{'active-filter': avFilter == false }"
+              (click)="onAvailableFilterChange(false)">Borrowed Books
+      </button>
     </div>
   </div>
+</div>
 
 <div class="col-xs-12">
-    <div class="col-xs-12 button-div">
-        <button class="btn btn-warning back-button" [routerLink]="['/app-home-component']"><</button>
-        <button class="btn btn-danger filter-button" type="button" data-toggle="collapse" data-target="#filter" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <img src="../../../../assets/icons/filter.ico" class="filter-button-image">
-        </button>
-        <button class="btn btn-success add-button" data-toggle="modal" data-target="#modal">+</button>
-    </div>
+  <div class="col-xs-12 button-div">
+    <button class="btn back-button" [routerLink]="['/app-home-component']"><</button>
+    <button class="btn btn-danger filter-button" type="button" data-toggle="collapse" data-target="#filter"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="../../../../assets/icons/filter.ico" class="filter-button-image">
+    </button>
+    <button class="btn btn-success add-button" data-toggle="modal" data-target="#modal">+</button>
+  </div>
 </div>
-<div *ngFor="let book of results | async | bookfilter:bookFilter | availablefilter:avFilter" [routerLink]="['/app-book-component', book.id]">
+<div *ngFor="let book of results | async | bookfilter:bookFilter | availablefilter:avFilter | titlefilter:searchString"
+     [routerLink]="['/app-book-component', book.id]">
   <div class="col-xs-offset-1 col-xs-10 col-sm-5 bookCard">
     <div class="col-xs-4 col-sm-3 bookImageDiv">
-        <img class="bookImage" src={{book.imageUrl}} alt="image for book">
+      <img class="bookImage" src={{book.imageUrl}} alt="image for book">
     </div>
     <div class="col-xs-8 col-sm-9 content-wrapper">
       <h2 class="col-xs-12 book-title">{{book.title}}</h2>
       <h3 class="col-xs-12 book-author">{{book.author}}</h3>
-      <h3 class="col-xs-12 book-loaned-wrapper"><span class="book-loaned-span" *ngIf="book.loanedBy">Borrowed</span> {{book.loanedBy}}</h3>
+      <h3 class="col-xs-12 book-loaned-wrapper"><span class="book-loaned-span" *ngIf="book.loanedBy">Borrowed</span>
+        {{book.loanedBy}}</h3>
       <div class="tag-wrapper" *ngIf="book.tag == 'code'">
         <div class="tag code-tag"></div>
-          <p class="tag-text"> code</p>
-        </div>
+        <p class="tag-text"> code</p>
+      </div>
       <div class="tag-wrapper" *ngIf="book.tag == 'design'">
-        <div class="tag design-tag"></div><p class="tag-text"> design</p>
+        <div class="tag design-tag"></div>
+        <p class="tag-text"> design</p>
       </div>
       <div class="tag-wrapper" *ngIf="book.tag == 'marketing'">
-        <div class="tag marketing-tag"></div><p class="tag-text"> marketing</p>
+        <div class="tag marketing-tag"></div>
+        <p class="tag-text"> marketing</p>
       </div>
       <div class="tag-wrapper" *ngIf="book.tag == 'copyright'">
         <div class="tag copyright-tag"></div>
-          <p class="tag-text"> copyright</p>
-        </div>
+        <p class="tag-text"> copyright</p>
+      </div>
       <div class="tag-wrapper" *ngIf="book.tag == 'entrep'">
-        <div class="tag entrep-tag"></div><p class="tag-text"> entrepeneurship</p>
+        <div class="tag entrep-tag"></div>
+        <p class="tag-text"> entrepeneurship</p>
       </div>
     </div>
   </div>

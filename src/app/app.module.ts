@@ -23,6 +23,7 @@ import {UserService} from './services/user.service';
 import {AuthGuard} from './services/authguard.service';
 import {BookFilter} from './filters/book.filter';
 import {AvailableFilter} from './filters/availability.filter';
+import {TitleFilter} from './filters/title.filter';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './components/home.component/home.component';
@@ -31,6 +32,7 @@ import {BookComponent} from './components/books/book.component/book.component';
 import {BookLoanQRComponent} from './components/books/book-loan-by-qr.component/book-loan-by-qr.component';
 import {LoginComponent} from './components/auth/login.component/login.component';
 import {RegisterComponent} from './components/auth/register.component/register.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import {RegisterComponent} from './components/auth/register.component/register.c
     LoginComponent,
     RegisterComponent,
     BookFilter,
-    AvailableFilter
+    AvailableFilter,
+    TitleFilter
   ],
   imports: [
     BrowserModule,

@@ -124,7 +124,16 @@
   background-color: transparent;
 }
 
+.search-button{
+  border: 1px solid orange;
+  background-color: transparent;
+}
+
 .filter-button-image {
+  width: 100%;
+}
+
+.search-button-image{
   width: 100%;
 }
 
@@ -161,6 +170,26 @@
   float: left;
 }
 
+.code-tag {
+  background-color: #FC4F05;
+}
+
+.design-tag {
+  background-color: #FF9A03;
+}
+
+.marketing-tag {
+  background-color: #9F55A3;
+}
+
+.copyright-tag {
+  background-color: #348BBA;
+}
+
+.entrep-tag {
+  background-color: #37A31C;
+}
+
 .tag-text {
   line-height: 10px;
   float: left;
@@ -172,6 +201,13 @@
   padding-left:0;
   margin-bottom:0;
   margin-top: 5px;
+}
+
+.search-input{
+  width:260px;
+  height:40px;
+  border-radius: 15px;
+  border: 1px solid #DDD;
 }
 
 @media screen and (max-width: 600px) {
@@ -231,6 +267,11 @@
 
   .filter-button-image {
     height: 100%;
+    width: initial;
+  }
+
+  .search-button-image{
+    height:100%;
     width: initial;
   }
 }

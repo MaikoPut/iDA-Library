@@ -22,11 +22,18 @@ small {
 label{
   text-align:left;
   font-size:1.2em;
+  padding-left:2%;
 }
 
 
 input {
   padding-left: 5px;
+  border-radius: 15px;
+  border: 1px solid #CCC;
+
+  &:focus{
+    outline:none;
+  }
 }
 
 p {
@@ -47,7 +54,7 @@ button{
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px white inset;
+  -webkit-box-shadow: 0 0 0 0px white inset;
 }
 
 @media screen and (max-width: 768px) {

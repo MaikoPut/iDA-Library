@@ -25,18 +25,9 @@ export class BookService {
         }));
     }
 
-    getBookById(id: string): Observable<Book> {
-        return this.http.get(this.path + '/' + id).map(response => new Book(response.json()));
-    }
-
     getBookByQR(qr: string): Observable<Book> {
         return this.http.get(this.path).map((response: Response) =>
-        response.json().map(book => { return new Book(book); }).filter(book => book.qrcode === qr));
-    }
-
-    getBookByBar(bar: string): Observable<Book> {
-        return this.http.get(this.path).map((response: Response) =>
-        response.json().map(book => { return new Book(book); }).filter(book => book.barcode === bar));
+        response.json().map(book =>  new Book(book)).filter(book => book.qrcode === qr));
     }
 
     loanOutBook(book: Book): Observable<Book> {

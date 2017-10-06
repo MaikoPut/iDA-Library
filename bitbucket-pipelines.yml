@@ -8,9 +8,9 @@ image: node:6.11.2
 pipelines:
   default:
     - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
+      caches:
+        - node
+          script: # Modify the commands below to build your repository.
           - npm install
           - npm test
   branches:
@@ -23,4 +23,3 @@ pipelines:
           - ng build --prod --aot
           - npm run precache
           - firebase deploy
-  

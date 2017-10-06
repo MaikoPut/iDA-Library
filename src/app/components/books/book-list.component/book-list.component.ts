@@ -30,6 +30,7 @@ export class BookListComponent {
 
   addBook() {
     this.store.dispatch(new Actions.AddBook(this.bookToAdd));
+    this.bookToAdd = new Book('');
   }
 
   onBookFilterChange(value) {

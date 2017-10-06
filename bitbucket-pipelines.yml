@@ -17,6 +17,7 @@ pipelines:
     master:
       -step:
         script:
+          - npm install -g @angular/cli
           - ng build --prod --aot
           - npm run precache
           - firebase deploy

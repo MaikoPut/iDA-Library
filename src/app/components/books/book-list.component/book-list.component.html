@@ -9,8 +9,8 @@
       </div>
       <div class="modal-body body" style="padding-top:0;">
         <div class="col-xs-12">
-          <label for="isbn" class="col-xs-12 add-book-label">ISBN</label>
-          <input id="booktitle" class="col-xs-12 inputBook" type="text" placeholder="optioneel" [(ngModel)]="isbn" (ngModelChange)="searchISBN($event)">
+          <label for="isbn" class="col-xs-12 add-book-label">ISBN <span class="optioneel">optioneel</span></label>
+          <input id="booktitle" class="col-xs-12 inputBook" type="text" [(ngModel)]="isbn" (ngModelChange)="searchISBN($event)">
           <label for="booktitle" class="col-xs-12 add-book-label">Title</label>
           <input id="booktitle" class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.title">
           <label for="bookauthor" class="col-xs-12 add-book-label">Author</label>

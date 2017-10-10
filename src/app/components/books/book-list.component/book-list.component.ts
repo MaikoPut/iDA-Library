@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import {GoogleBooksService} from '../../../services/google.books.service';
 
 import {Book} from '../../../models/book.model';
 
@@ -18,10 +19,11 @@ export class BookListComponent {
   loading: Observable<boolean>;
   bookToAdd: Book = new Book('');
   bookFilter: string;
+  isbn:string;
   avFilter: boolean;
   searchString: string;
 
-  constructor(private store: Store<fromStore.State>) {
+  constructor(private store: Store<fromStore.State>, private service: GoogleBooksService) {
     this.results = this.store.select(fromStore.getBooks);
     this.loading = this.store.select(fromStore.getLoading);
     this.bookFilter = 'all';
@@ -46,5 +48,13 @@ export class BookListComponent {
   }
   searchByTitle(value) {
     this.searchString = value;
+  }
+
+  searchISBN(value){
+    if(value!="" && (value.length == 10 || value.length == 13)){
+    this.service.getBookByISBN(value).subscribe(res =>{this.bookToAdd.title=res.title; this.bookToAdd.author=res.authors[0]; this.bookToAdd.description = res.description });
+    } else{
+      this.bookToAdd = new Book('');
+    }
   }
 }

@@ -18,6 +18,7 @@ import {UserEffects} from './state-management/effects/user.effects';
 import {reducers} from './state-management/reducers/store';
 
 import {BookService} from './services/book.service';
+import {GoogleBooksService} from './services/google.books.service';
 import {AuthService} from './services/auth.service';
 import {UserService} from './services/user.service';
 import {AuthGuard} from './services/authguard.service';
@@ -59,7 +60,7 @@ import {RegisterComponent} from './components/auth/register.component/register.c
     EffectsModule.forRoot([BookEffects, UserEffects]),
     QrScannerModule
   ],
-  providers: [BookService, AuthService, UserService, AuthGuard],
+  providers: [BookService, AuthService, UserService, AuthGuard, GoogleBooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

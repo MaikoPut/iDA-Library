@@ -10,7 +10,7 @@ import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/do';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuardAdmin implements CanActivate {
   isLoggedIn = false;
   user: Observable<firebase.User>;
 
@@ -22,14 +22,6 @@ export class AuthGuard implements CanActivate {
     return this.auth.authState
       .take(1)
       .map(authState => !!authState)
-      .do(auth => this.checkLogin(auth) ? true : this.router.navigate(['/login']));
-  }
-
-  checkLogin(auth) {
-    if (auth && this.isLoggedIn) {
-      return true;
-    } else {
-      return false;
-    }
+      .do(auth => auth ? true : this.router.navigate(['/login']));
   }
 }

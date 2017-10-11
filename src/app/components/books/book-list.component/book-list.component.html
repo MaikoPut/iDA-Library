@@ -47,7 +47,7 @@
 
 <div class="col-xs-12 button-div-container">
   <div class="col-xs-12 button-div">
-    <button class="btn back-button" [routerLink]="['/app-home-component']"><</button>
+    <button class="btn back-button" [routerLink]="['/home']"><</button>
     <button class="btn btn-danger filter-button" type="button" data-toggle="collapse" data-target="#filter"
             aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <img src="../../../../assets/icons/filter.ico" class="filter-button-image">
@@ -91,7 +91,7 @@
   </div>
 </div>
 <div *ngFor="let book of results | async | bookfilter:bookFilter | availablefilter:avFilter | titlefilter:searchString"
-     [routerLink]="['/app-book-component', book.id]">
+     [routerLink]="['/book', book.id]">
   <div class="col-xs-offset-1 col-xs-10 col-sm-5 bookCard">
     <div class="col-xs-4 col-sm-3 bookImageDiv">
       <img class="bookImage" src={{book.imageUrl}} alt="image for book">

@@ -19,6 +19,9 @@ export const BRING_BACK_DONE = 'BRING_BACK_DONE';
 export const ADD_BOOK = 'ADD_BOOK';
 export const ADD_BOOK_DONE = 'ADD_BOOK_DONE';
 
+export const UPDATE_BOOK = 'UPDATE_BOOK';
+export const UPDATE_BOOK_DONE = 'UPDATE_BOOK_DONE';
+
 export class FetchAllBooks implements Action {
     readonly type = FETCH_ALL_BOOKS;
     constructor(){};
@@ -74,5 +77,15 @@ export class AddBookDone implements Action {
     constructor(public payload: Book) {}
 }
 
+export class UpdateBook implements Action {
+    readonly type = UPDATE_BOOK;
+    constructor(public payload: Book) {}
+}
+
+export class UpdateBookDone implements Action {
+    readonly type = UPDATE_BOOK_DONE;
+    constructor() {}
+}
+
 export type Actions = FetchAllBooks | FetchAllBooksDone | GetBook | GetBookWQR | GetBookWQRDone | LoanBook | LoanBookDone |
-                      BringBack | BringBackDone | AddBook | AddBookDone;
+                      BringBack | BringBackDone | AddBook | AddBookDone | UpdateBook | UpdateBookDone;

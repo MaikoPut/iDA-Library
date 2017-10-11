@@ -22,9 +22,11 @@ import {GoogleBooksService} from './services/google.books.service';
 import {AuthService} from './services/auth.service';
 import {UserService} from './services/user.service';
 import {AuthGuard} from './services/authguard.service';
+import {AuthGuardAdmin} from './services/authguard.admin.service';
 import {BookFilter} from './filters/book.filter';
 import {AvailableFilter} from './filters/availability.filter';
 import {TitleFilter} from './filters/title.filter';
+import {AlphabeticalFilter} from './filters/alphabetical.filter';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './components/home.component/home.component';
@@ -33,6 +35,8 @@ import {BookComponent} from './components/books/book.component/book.component';
 import {BookLoanQRComponent} from './components/books/book-loan-by-qr.component/book-loan-by-qr.component';
 import {LoginComponent} from './components/auth/login.component/login.component';
 import {RegisterComponent} from './components/auth/register.component/register.component';
+import {AdminBookListComponent} from './components/admin/admin.booklist.component/admin.booklist.component';
+import {AdminBookComponent} from './components/admin/admin.book.component/admin.book.component';
 
 
 @NgModule({
@@ -46,7 +50,10 @@ import {RegisterComponent} from './components/auth/register.component/register.c
     RegisterComponent,
     BookFilter,
     AvailableFilter,
-    TitleFilter
+    TitleFilter,
+    AlphabeticalFilter,
+    AdminBookListComponent,
+    AdminBookComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +67,7 @@ import {RegisterComponent} from './components/auth/register.component/register.c
     EffectsModule.forRoot([BookEffects, UserEffects]),
     QrScannerModule
   ],
-  providers: [BookService, AuthService, UserService, AuthGuard, GoogleBooksService],
+  providers: [BookService, AuthService, UserService, AuthGuard, AuthGuardAdmin, GoogleBooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

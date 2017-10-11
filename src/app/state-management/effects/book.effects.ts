@@ -69,4 +69,18 @@ export class BookEffects {
                     .map(result => {this.router.navigate(['app-book-component/' + result[0].id]);
                     return new BookActions.GetBookWQRDone(result[0]); });
                 });
+    @Effect()
+    updateBook$: Observable<Action> = this.actions$.ofType(BookActions.UPDATE_BOOK)
+                .map(toPayload)
+                .switchMap(book => {
+                    return this.bookService.updateBook(book)
+                    .map(book => new BookActions.UpdateBookDone());
+                })
+    @Effect()
+    updateBookDone$: Observable<Action> = this.actions$.ofType(BookActions.UPDATE_BOOK_DONE)
+                .map(toPayload)
+                .switchMap(book => {
+                    return this.bookService.getAllBooks()
+                    .map(results => new BookActions.FetchAllBooksDone(results));
+                })
  }

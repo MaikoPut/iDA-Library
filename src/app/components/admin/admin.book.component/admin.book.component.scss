@@ -1,0 +1,17 @@
+.edit-input{
+    width:100%;
+}
+
+.edit-image{
+    width:300px;
+}
+
+table{
+    margin-bottom: 10%;
+}
+
+@media (max-width: 768px){
+    .edit-image{
+        width: 150px;
+    }
+}

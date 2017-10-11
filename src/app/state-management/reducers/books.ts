@@ -87,6 +87,18 @@ export function bookReducer(state: State = initialState, action: BookActions.Act
                 results: [...state.results, action.payload]
             };
         }
+        case BookActions.UPDATE_BOOK: {
+            return {
+                ...state,
+                loading: true
+            };
+        }
+        case BookActions.UPDATE_BOOK_DONE: {
+            return {
+                ...state,
+                loading: false
+            };
+        }
         default: {
             return state;
         }

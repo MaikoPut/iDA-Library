@@ -44,4 +44,9 @@ export class BookService {
         return this.http.post(this.path, JSON.stringify(book),
           {headers: this.headers}).map(response => new Book(response.json()));
     }
+
+    updateBook(book: Book): Observable<Book>{
+        return this.http.put(this.path + '/' + book.id, JSON.stringify(book),
+        {headers: this.headers}).map(response => new Book(response.json()));
+    }
 }

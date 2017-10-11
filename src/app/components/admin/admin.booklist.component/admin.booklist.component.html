@@ -1,0 +1,19 @@
+<div class="container">
+<h2>Edit books</h2>           
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of results | async | sortalphabetically">
+        <td [routerLink]="['/admin-book', book.id]">{{book.title}}</td>
+        <td [routerLink]="['/admin-book', book.id]">{{book.author}}</td>
+        <td>X</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

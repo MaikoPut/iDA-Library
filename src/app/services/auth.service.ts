@@ -37,7 +37,7 @@ export class AuthService {
       .signInWithEmailAndPassword(userCredentials.email, userCredentials.password)
       .then(value => {
         this.authGuard.isLoggedIn = true;
-        this.router.navigate(['app-home-component']);
+        this.router.navigate(['home']);
         return value;
       })
       .catch(err => {
@@ -48,7 +48,7 @@ export class AuthService {
   logout() {
     return this.firebaseAuth.auth.signOut()
       .then(res => {
-        this.router.navigate(['app-login-component']);
+        this.router.navigate(['login']);
       });
   }
 }

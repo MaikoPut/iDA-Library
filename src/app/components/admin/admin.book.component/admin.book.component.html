@@ -1,0 +1,46 @@
+<div class="container" *ngIf="book | async as book">
+<h2>Edit books</h2>           
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th>Title</th>
+        <td><input type="text" class="edit-input" [(ngModel)]="book.title"></td>
+      </tr>
+      <tr>
+        <th>Author</th>
+        <td><input type="text" class="edit-input" [(ngModel)]="book.author"></td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td><textarea type="text" cols="50" rows="4" class="edit-input" [(ngModel)]="book.description"></textarea></td>
+      </tr>
+      <tr>
+        <th>ImageUrl</th>
+        <td><input type="text" class="edit-input" [(ngModel)]="book.imageUrl"></td>
+      </tr>
+      <tr *ngIf="book.imageUrl != ''">
+        <th>Image</th>
+        <td><img class="edit-image" [src]="book.imageUrl"></td>
+      </tr>
+      <tr>
+        <th>QR Code</th>
+        <td><input type="text" class="edit-input" [(ngModel)]="book.qrcode"></td>
+      </tr>
+      <tr>
+        <th>Tag</th>
+        <td>
+            <select class="edit-input" [(ngModel)]="book.tag">
+                <option value="code">Code</option>
+                <option value="design">Design</option>
+                <option value="copyright">Copyright</option>
+                <option value="marketing">Marketing</option>
+                <option value="entrep">Entrepeneurship</option>
+            </select>
+        </td>
+      </tr>
+      <tr style="text-align:center">
+        <td colspan="2"><button class="btn btn-warning" (click)="updateClicked(book)">Update</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

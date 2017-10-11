@@ -3,13 +3,14 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Title</th>
+        <th colspan="2">Title</th>
         <th>Author</th>
         <th>Delete</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let book of results | async | sortalphabetically">
+        <td class="img-td"><img [src]="book.imageUrl"></td>
         <td [routerLink]="['/admin-book', book.id]">{{book.title}}</td>
         <td [routerLink]="['/admin-book', book.id]">{{book.author}}</td>
         <td>X</td>

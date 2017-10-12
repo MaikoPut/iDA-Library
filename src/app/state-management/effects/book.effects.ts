@@ -66,7 +66,7 @@ export class BookEffects {
                 .map(toPayload)
                 .switchMap(qr => {
                     return this.bookService.getBookByQR(qr)
-                    .map(result => {this.router.navigate(['app-book-component/' + result[0].id]);
+                    .map(result => {this.router.navigate(['book/' + result[0].id]);
                     return new BookActions.GetBookWQRDone(result[0]); });
                 });
     @Effect()

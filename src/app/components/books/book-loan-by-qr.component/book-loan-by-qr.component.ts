@@ -21,11 +21,10 @@ export class BookLoanQRComponent implements OnDestroy, AfterViewChecked{
   ngAfterViewChecked() {
     const self = this;
     this.scanner = new Instascan.Scanner({continuous: true, video: document.getElementById('preview'),
-                                          refractoryPeriod: 5000, scanPeriod: 1, mirror: true});
+                                          refractoryPeriod: 5000, scanPeriod: 1, mirror: false});
 
      this.scanner.addListener('scan', function(content, image){
       self.store.dispatch(new BookActions.GetBookWQR(content));
-      this.scanner.stop();
     });
 
     Instascan.Camera.getCameras().then(function(cameras){

@@ -5,6 +5,7 @@
       <tr>
         <th colspan="2">Title</th>
         <th>Author</th>
+        <th>Availability</th>
         <th>Delete</th>
       </tr>
     </thead>
@@ -13,6 +14,7 @@
         <td class="img-td"><img [src]="book.imageUrl"></td>
         <td [routerLink]="['/admin-book', book.id]">{{book.title}}</td>
         <td [routerLink]="['/admin-book', book.id]">{{book.author}}</td>
+        <th [ngClass]="{'available': !book.loanedOut, 'loaned': book.loanedOut}"><span *ngIf="book.loanedBy">{{book.loanedBy}}</span></th>
         <td class="delete-td" (click)="deleteBook(book)">X</td>
       </tr>
     </tbody>

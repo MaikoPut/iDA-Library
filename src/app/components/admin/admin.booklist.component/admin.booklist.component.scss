@@ -18,19 +18,3 @@ thead{
     text-align: center;
     line-height:63px;
 }
-
-.tr-data{
-    transition: ease-out .2s;
-
-    &:hover::before{
-        transform: translateX(-10%);
-    }
-
-    &:hover{
-        transform: translateX(+10%);
-    }
-
-    &:hover::after{
-        transform: translateX(0%);
-    }
-}

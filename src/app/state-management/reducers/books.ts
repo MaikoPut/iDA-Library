@@ -99,6 +99,18 @@ export function bookReducer(state: State = initialState, action: BookActions.Act
                 loading: false
             };
         }
+        case BookActions.DELETE_BOOK: {
+            return {
+                ...state,
+                loading: true
+            }
+        }
+        case BookActions.DELETE_BOOK_DONE: {
+            return {
+                ...state,
+                loading: false
+            }
+        }
         default: {
             return state;
         }

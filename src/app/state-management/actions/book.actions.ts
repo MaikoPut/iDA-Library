@@ -22,6 +22,9 @@ export const ADD_BOOK_DONE = 'ADD_BOOK_DONE';
 export const UPDATE_BOOK = 'UPDATE_BOOK';
 export const UPDATE_BOOK_DONE = 'UPDATE_BOOK_DONE';
 
+export const DELETE_BOOK = 'DELETE_BOOK';
+export const DELETE_BOOK_DONE = 'DELETE_BOOK_DONE';
+
 export class FetchAllBooks implements Action {
     readonly type = FETCH_ALL_BOOKS;
     constructor(){};
@@ -87,5 +90,15 @@ export class UpdateBookDone implements Action {
     constructor() {}
 }
 
+export class DeleteBook implements Action {
+    readonly type = DELETE_BOOK;
+    constructor(public payload: Book) {}
+}
+
+export class DeleteBookDone implements Action {
+    readonly type = DELETE_BOOK_DONE;
+    constructor() {}
+}
+
 export type Actions = FetchAllBooks | FetchAllBooksDone | GetBook | GetBookWQR | GetBookWQRDone | LoanBook | LoanBookDone |
-                      BringBack | BringBackDone | AddBook | AddBookDone | UpdateBook | UpdateBookDone;
+                      BringBack | BringBackDone | AddBook | AddBookDone | UpdateBook | UpdateBookDone | DeleteBook | DeleteBookDone;

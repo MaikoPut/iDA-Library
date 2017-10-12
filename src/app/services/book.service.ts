@@ -49,4 +49,9 @@ export class BookService {
         return this.http.put(this.path + '/' + book.id, JSON.stringify(book),
         {headers: this.headers}).map(response => new Book(response.json()));
     }
+
+    deleteBook(bookid: string): Observable<Book>{
+        return this.http.delete(this.path + '/' + bookid,
+        {headers: this.headers}).map(response => new Book(response.json()));
+    }
 }

@@ -9,11 +9,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let book of results | async | sortalphabetically">
+      <tr *ngFor="let book of results | async | sortalphabetically" class="tr-data">
         <td class="img-td"><img [src]="book.imageUrl"></td>
         <td [routerLink]="['/admin-book', book.id]">{{book.title}}</td>
         <td [routerLink]="['/admin-book', book.id]">{{book.author}}</td>
-        <td>X</td>
+        <td class="delete-td" (click)="deleteBook(book)">X</td>
       </tr>
     </tbody>
   </table>

@@ -20,4 +20,8 @@ export class AdminBookListComponent{
         this.store.dispatch(new BookActions.FetchAllBooks());
         this.results = this.store.select(fromStore.getBooks);
     }
+
+    deleteBook(book){
+        this.store.dispatch(new BookActions.DeleteBook(book));
+    }
 }

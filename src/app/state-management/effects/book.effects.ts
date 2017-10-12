@@ -83,4 +83,18 @@ export class BookEffects {
                     return this.bookService.getAllBooks()
                     .map(results => new BookActions.FetchAllBooksDone(results));
                 })
+    @Effect()
+    deleteBook$: Observable<Action> = this.actions$.ofType(BookActions.DELETE_BOOK)
+                .map(toPayload)
+                .switchMap(book => {
+                    return this.bookService.deleteBook(book.id)
+                    .map(book => new BookActions.DeleteBookDone());
+                })
+    @Effect()
+    deleteBookDone$: Observable<Action> = this.actions$.ofType(BookActions.DELETE_BOOK_DONE)
+                .map(toPayload)
+                .switchMap(book => {
+                    return this.bookService.getAllBooks()
+                    .map(results => new BookActions.FetchAllBooksDone(results));
+                })
  }

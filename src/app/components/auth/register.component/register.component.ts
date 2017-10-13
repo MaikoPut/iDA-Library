@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { UserCredentials } from '../../../models/user-credentials.model';
 
 import { Store } from '@ngrx/store';
@@ -18,7 +17,7 @@ export class RegisterComponent {
     passwordError: boolean;
     emailError: boolean;
 
-    constructor(private router: Router, private store: Store<fromRoot.State>) {}
+    constructor(private store: Store<fromRoot.State>) {}
 
     register() {
         if (this.checkEmail()) {

@@ -8,20 +8,20 @@ import * as fromStore from '../../../state-management/reducers/store';
 import * as BookActions from '../../../state-management/actions/book.actions';
 
 @Component({
-    selector: "app-admin-booklist-component",
-    templateUrl: "./admin.booklist.component.html",
-    styleUrls: ["./admin.booklist.component.scss"]
+    selector: 'admin-booklist-component',
+    templateUrl: './admin.booklist.component.html',
+    styleUrls: ['./admin.booklist.component.scss']
 })
 
-export class AdminBookListComponent{
+export class AdminBookListComponent {
     results: Observable<Book[]>;
-    
+
     constructor(private store: Store<fromStore.State>){
         this.store.dispatch(new BookActions.FetchAllBooks());
         this.results = this.store.select(fromStore.getBooks);
     }
 
-    deleteBook(book){
+    deleteBook(book) {
         this.store.dispatch(new BookActions.DeleteBook(book));
     }
 }

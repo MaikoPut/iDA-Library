@@ -51,9 +51,9 @@ export class BookListComponent {
   }
 
   searchISBN(value){
-    if(value!="" && (value.length == 10 || value.length == 13)){
-    this.service.getBookByISBN(value).subscribe(res =>{this.bookToAdd.title=res.title; this.bookToAdd.author=res.authors[0]; this.bookToAdd.description = res.description });
-    } else{
+    if (value !== '' && (value.length === 10 || value.length === 13)) {
+    this.service.getBookByISBN(value).subscribe(res => {this.bookToAdd.title = res.title; this.bookToAdd.author = res.authors[0]; this.bookToAdd.description = res.description; });
+    } else {
       this.bookToAdd = new Book('');
     }
   }

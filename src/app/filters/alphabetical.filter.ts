@@ -1,8 +1,8 @@
-import { Pipe } from "@angular/core";
-import { Book } from "../models/book.model";
+import { Pipe } from '@angular/core';
+import { Book } from '../models/book.model';
 
 @Pipe({
-  name: "sortalphabetically"
+  name: 'sortalphabetically'
 })
 
 export class AlphabeticalFilter {

@@ -1,5 +1,4 @@
 import {Component, OnDestroy, AfterViewChecked} from '@angular/core';
-import {Router} from '@angular/router';
 
 import {Store} from '@ngrx/store';
 import * as fromStore from '../../../state-management/reducers/store';
@@ -7,7 +6,7 @@ import * as BookActions from '../../../state-management/actions/book.actions';
 import * as Instascan from 'instascan';
 
 @Component({
-  selector: 'bookLoanQR',
+  selector: 'book-loan-qr',
   templateUrl: './book-loan-by-qr.component.html',
   styleUrls: ['./book-loan-by-qr.component.scss']
 })
@@ -15,7 +14,7 @@ import * as Instascan from 'instascan';
 export class BookLoanQRComponent implements OnDestroy, AfterViewChecked{
   private scanner: Instascan.Scanner;
 
-  constructor(private store: Store<fromStore.State>, private router: Router) {
+  constructor(private store: Store<fromStore.State>) {
   }
 
   ngAfterViewChecked() {
@@ -36,10 +35,6 @@ export class BookLoanQRComponent implements OnDestroy, AfterViewChecked{
         console.log('no cameras found');
       }
     });
-  }
-
-  decodedOutput(event) {
-    this.store.dispatch(new BookActions.GetBookWQR(event));
   }
 
   ngOnDestroy() {

@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
 import {UserCredentials} from '../../../models/user-credentials.model';
 
 import {Store} from '@ngrx/store';
@@ -17,7 +16,7 @@ export class LoginComponent {
   userCredentials: UserCredentials = new UserCredentials('', '');
   error: Observable<string>;
 
-  constructor(private router: Router, private store: Store<fromRoot.State>) {
+  constructor(private store: Store<fromRoot.State>) {
     this.error = this.store.select(fromRoot.getUserError);
   }
 

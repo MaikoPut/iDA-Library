@@ -1,10 +1,8 @@
-import {Component, ChangeDetectionStrategy, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 
 import {Store} from '@ngrx/store';
 import * as fromRoot from './state-management/reducers/store';
 import * as BookActions from './state-management/actions/book.actions';
-import * as UserActions from './state-management/actions/user.actions';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +10,9 @@ import * as UserActions from './state-management/actions/user.actions';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  constructor(private store: Store<fromRoot.State>, private router: Router) {
+  constructor(private store: Store<fromRoot.State>) {
     this.store.dispatch(new BookActions.FetchAllBooks());
-  }
-
-  ngOnInit() {
-    
-  }
-
-  logout() {
-    this.store.dispatch(new UserActions.Logout());
   }
 }

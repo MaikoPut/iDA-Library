@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs';
 
 import { Book } from '../../../models/book.model';
@@ -22,7 +22,7 @@ export class BookComponent implements OnInit {
     loggedInUser: Observable<User>;
     loggedInUsername: string;
 
-    constructor(private route: ActivatedRoute, private router: Router,
+    constructor(private route: ActivatedRoute,
                 private store: Store<fromStore.State>) {}
 
     ngOnInit() {

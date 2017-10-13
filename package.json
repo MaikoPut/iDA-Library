@@ -31,7 +31,7 @@
     "bootstrap": "^3.3.7",
     "core-js": "2.5.1",
     "firebase": "4.3.1",
-    "instascan": "^1.0.0",
+    "instascan": "git+https://github.com/aitorllj93/instascan-no-polyfill.git",
     "jquery": "^3.2.1",
     "quagga": "^0.12.1",
     "rxjs": "5.4.3",

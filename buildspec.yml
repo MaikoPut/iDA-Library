@@ -1,0 +1,25 @@
+version: 0.2
+environment_variables:
+    plaintext:
+        S3_BUCKET: "ida-library-io"
+phases:
+    install:
+        commands:
+            - echo Installing source NPM dependencies...
+            - npm install
+            - npm install -g @angular/cli
+            - npm install -g firebase-tools
+    build:
+        commands:
+            - echo Build started on `date`
+            - ng build
+            - npm run precache
+    post_build:
+         commands:
+            - firebase deploy --token $FIREBASE_TOKEN --non-interactive
+            - echo Build completed on `date`
+artifacts:
+    files:
+        - '**/*'
+    base-directory: 'dist*'
+    discard-paths: yes

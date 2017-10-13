@@ -8,5 +8,5 @@ export const environment = {
     storageBucket: "bookstore-3370c.appspot.com",
     messagingSenderId: "1099150592228"
   },
-  FIREBASE_TOKEN: "1/7o4A3dzSPhNQx-gEzbaYXyt7S42A4sxebo_Ki5u5hdI"
+  FIREBASE_TOKEN: "1/FklMXKvnlF5hSP8gli1DL4VI93Gq1yz6F-PQqTWI-HQ"
 };

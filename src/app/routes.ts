@@ -15,7 +15,7 @@ export const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'booklist', component: BookListComponent, canActivate: [AuthGuard]},
   {path: 'book/:id', component: BookComponent, canActivate: [AuthGuard]},
-  {path: 'bookloanQR', component: BookLoanQRComponent, canActivate: [AuthGuard]},
+  {path: 'book-loan-qr', component: BookLoanQRComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'admin-booklist', component: AdminBookListComponent, canActivate: [AuthGuardAdmin]},
